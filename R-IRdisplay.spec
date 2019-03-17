@@ -4,15 +4,17 @@
 #
 Name     : R-IRdisplay
 Version  : 0.7.0
-Release  : 34
+Release  : 35
 URL      : https://cran.r-project.org/src/contrib/IRdisplay_0.7.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/IRdisplay_0.7.0.tar.gz
 Summary  : 'Jupyter' Display Machinery
 Group    : Development/Tools
 License  : MIT
+Requires: R-withr
 BuildRequires : R-assertthat
 BuildRequires : R-repr
 BuildRequires : R-rlang
+BuildRequires : R-withr
 BuildRequires : buildreq-R
 
 %description
@@ -31,10 +33,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1549272978
+export SOURCE_DATE_EPOCH=1552834110
 
 %install
-export SOURCE_DATE_EPOCH=1549272978
+export SOURCE_DATE_EPOCH=1552834110
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -70,8 +72,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library IRdisplay|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  IRdisplay || :
 
 
 %files
@@ -96,3 +97,9 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/IRdisplay/help/paths.rds
 /usr/lib64/R/library/IRdisplay/html/00Index.html
 /usr/lib64/R/library/IRdisplay/html/R.css
+/usr/lib64/R/library/IRdisplay/tests/testthat.R
+/usr/lib64/R/library/IRdisplay/tests/testthat/test-options.r
+/usr/lib64/R/library/IRdisplay/tests/testthat/test_base_display.r
+/usr/lib64/R/library/IRdisplay/tests/testthat/test_display_functions.r
+/usr/lib64/R/library/IRdisplay/tests/testthat/test_display_functions_images.r
+/usr/lib64/R/library/IRdisplay/tests/testthat/test_display_functions_textual.r
