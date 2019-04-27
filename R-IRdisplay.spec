@@ -4,7 +4,7 @@
 #
 Name     : R-IRdisplay
 Version  : 0.7.0
-Release  : 38
+Release  : 39
 URL      : https://cran.r-project.org/src/contrib/IRdisplay_0.7.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/IRdisplay_0.7.0.tar.gz
 Summary  : 'Jupyter' Display Machinery
